@@ -24,7 +24,13 @@ function singleRound(playerSelection,getComputerChoice){
         return "You Lose! Rock beats Scissors"
     }else if(playerSelection.toLowerCase()=="scissor" && getComputerChoice=="Paper"){
         return "You Win! Scissor beats Paper"
+    }else{
+        return "It is a Draw"
     }
     
     
 }
+
+const playerSelection = "rock"
+const computerSelection= getComputerChoice();
+console.log(singleRound(playerSelection,computerSelection))
