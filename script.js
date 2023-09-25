@@ -31,6 +31,31 @@ function singleRound(playerSelection,getComputerChoice){
     
 }
 
-const playerSelection = "rock"
-const computerSelection= getComputerChoice();
-console.log(singleRound(playerSelection,computerSelection))
+// const playerSelection = "rock"
+// const computerSelection= getComputerChoice();
+// console.log(singleRound(playerSelection,computerSelection))
+
+function game(){
+    
+    let you = 0
+    let computer =0
+    for(let i=0;i<5;i++){
+        let playerSelection=prompt("Rock,Paper or Scissors?")
+        console.log(singleRound(playerSelection,getComputerChoice))
+        if ((singleRound(playerSelection,getComputerChoice).slice(4,7)=="Win")){
+            you +=1;
+
+        }else if ((singleRound(playerSelection,getComputerChoice).slice(4,8)=="Lose")){
+            computer +=1
+        }
+    }
+    if(you>computer){
+        console.log("You Won the Game") 
+    }else if(computer>you){
+        console.log("You Lost the Game") 
+    }else {
+        console.log("It is a Draw")
+    }
+}
+
+game()
